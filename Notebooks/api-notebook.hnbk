@@ -1,0 +1,29 @@
+- kind: 2
+  language: dothttp-vscode
+  value: |-
+    @name('base')
+    GET "http://localhost:3000" 
+  outputs: []
+- kind: 2
+  language: dothttp-vscode
+  value: |-
+    @name('create todo'): "base"
+    POST "/"
+    json({
+        "todo":"todo body",
+        "date":"219545445",
+        "done":"0"
+    })
+  outputs: []
+- kind: 2
+  language: dothttp-vscode
+  value: |
+    @name('update todo'): "base"
+    POST "/633ed97c2a2287151e65f109"
+  outputs: []
+- kind: 2
+  language: dothttp-vscode
+  value: |-
+    @name('delete todo'): "base"
+    DELETE "/633ed97c2a2287151e65f109"
+  outputs: []
