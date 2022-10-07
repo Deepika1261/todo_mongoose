@@ -15,12 +15,27 @@ Controllers = {
   updateTodo: async (req, res, next) => {
     try {
       const id = req.params.id;
-      const result = await Todo.findByIdAndUpdate(id, { done: "1" });
+      const result = await Todo.findByIdAndUpdate(id, { done: true });
       if (!result) {
         res.status(400).send("Todo does not exist.");
       }
       else {
         res.status(200).send("Successfully marked as done.");
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  },
+
+  undoTodo: async (req, res, next) => {
+    try {
+      const id = req.params.id;
+      const result = await Todo.findByIdAndUpdate(id, { done: false });
+      if (!result) {
+        res.status(400).send("Todo does not exist.");
+      }
+      else {
+        res.status(200).send("Successfully marked as undone.");
       }
     } catch (error) {
       console.log(error.message);

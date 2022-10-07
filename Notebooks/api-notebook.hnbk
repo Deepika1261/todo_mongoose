@@ -19,11 +19,17 @@
   language: dothttp-vscode
   value: |
     @name('update todo'): "base"
-    POST "/633ed97c2a2287151e65f109"
+    POST "/done/633fafb42cfba2091caa38e5"
+  outputs: []
+- kind: 2
+  language: dothttp-vscode
+  value: |-
+    @name('update todo'): "base"
+    POST "/undone/633fb11301cdff09ae0af55f"
   outputs: []
 - kind: 2
   language: dothttp-vscode
   value: |-
     @name('delete todo'): "base"
-    DELETE "/633ed97c2a2287151e65f109"
+    DELETE "/633fafb42cfba2091caa38e5"
   outputs: []

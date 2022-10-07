@@ -7,7 +7,10 @@ const TodoController = require("../controllers/todo_controller");
 router.post("/", TodoController.createTodo);
 
 //mark a todo as done
-router.post("/:id", TodoController.updateTodo);
+router.post("/done/:id", TodoController.updateTodo);
+
+//mark a todo as undone
+router.post("/undone/:id", TodoController.undoTodo);
 
 //delete a todo task
 router.delete("/:id", TodoController.deleteTodo);
